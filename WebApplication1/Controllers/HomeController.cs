@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 using WebApplication1.Models;
 using WebApplication1.Tools;
@@ -17,7 +18,7 @@ namespace WebApplication1.Controllers
 
         public ActionResult History()
         {
-            return View(db.CalculationHistory);
+            return View(db.CalculationHistory.OrderByDescending(calc => calc.DateTime));
         }
 
         [HttpGet]
