@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="calculator">
+    <input type="text" class="calculator__result" disabled/>
+    <div class="calc_buttons">
+        <button class="calculator__button btn-info">+</button>
+        <button class="calculator__button btn-info">-</button>
+        <button class="calculator__button btn-info">*</button>
+        <button class="calculator__button btn-info">/</button>
+
+        @for (var i = 9; i >= 0; i--)
+        {<button class="calculator__button btn-primary">@i</button>}
+
+        <button class="calculator__button btn-primary">,</button>
+
+        <button class="calculator__equal btn-success">=</button>
+        <button class="calculator__button btn-info">(</button>
+        <button class="calculator__button btn-info">)</button>
+        <button class="calculator__backspace btn-info"><</button>
+        <button class="calculator__clear btn-warning">AC</button>
+    </div>
+
+
+</div>

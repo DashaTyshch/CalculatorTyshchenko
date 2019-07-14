@@ -1,0 +1,25 @@
+﻿@model IEnumerable<WebApplication1.Models.Calculation>
+
+@{
+    ViewBag.Title = "History";
+}
+
+<div>
+    <h3>Calculation history</h3>
+    <table class="table">
+        <tr class="header">
+            <td>Date</td>
+            <td>Time</td>
+            <td>Expression</td>
+            <td></td>
+        </tr>
+        @foreach (WebApplication1.Models.Calculation b in Model)
+        {
+            <tr>
+                <td>@b.DateTime.ToString("MM-dd-yy")</td>
+                <td>@b.DateTime.ToString("H:mm:ss")</td>
+                <td>@(@b.Expression + " = " + @b.Result)</td>
+            </tr>
+        }
+    </table>
+</div>
